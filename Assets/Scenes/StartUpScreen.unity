@@ -435,7 +435,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1352072721}
         m_TargetAssemblyTypeName: Control, Assembly-CSharp
-        m_MethodName: NextSceen
+        m_MethodName: MainSceen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
