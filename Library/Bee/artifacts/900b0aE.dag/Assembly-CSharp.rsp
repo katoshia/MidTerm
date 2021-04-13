@@ -336,6 +336,7 @@
 "Assets/Scripts/Control.cs"
 "Assets/Scripts/DarkTheme.cs"
 "Assets/Scripts/MusicToggle.cs"
+"Assets/Scripts/MySceneManager.cs"
 "Assets/Scripts/SettingMenu.cs"
 "Assets/Scripts/SoundManager.cs"
 "Assets/Scripts/StoryScript.cs"
