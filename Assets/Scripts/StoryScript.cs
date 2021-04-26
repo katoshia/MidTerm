@@ -11,26 +11,13 @@ using System;
 
 public class StoryScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
 
     //Options for The Estate
     //Go Inside the estate, Main Entry Hall
     //Vist the gardens
     //Cross the fields to the lake.
 
-    void PrintTheEstate()
+    public void PrintTheEstate()
     {
         Console.WriteLine("Lord Shuran Dunkeld, your grandfather, is known for being a warrior, a leader and sometimes an adventurer in the service of the king. Recently, you and your family have moved into the Dunkeld estate due to rumors about your grandfather disappearing, and even being dead. While your parents handle the responsibilities of the estate, you have been left to explore as you wish.");
         Console.WriteLine("");
