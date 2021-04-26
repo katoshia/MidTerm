@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿// created by Katoshia Grubb
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
