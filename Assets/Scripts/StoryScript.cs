@@ -100,7 +100,7 @@ public class StoryScript : MonoBehaviour
     {
         Console.WriteLine("You enter the main entry hall. Pillars, suits of armor and benches line the walls of this room.There is also a large  chandelier that hangs from the ceiling and a decorative red and gold rug that covers most of the polished stone floor.There are stairs that lead up to a hallway and a door that goes to the library.");
     }
-
+    
     //Options for exploring the entry
     //Go up the stairs into the hall
     //Go into the library
@@ -291,7 +291,7 @@ public class StoryScript : MonoBehaviour
     {
         Console.WriteLine("You find yourself in another hallway, though this one smaller than the one at the front door.There is a door to the kitchen and stairs leading up to the Servant's Hall.");
     }
-
+    
     //Options for pool room
     //Enter the Pantry
     //Explore the room.

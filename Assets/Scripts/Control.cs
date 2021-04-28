@@ -27,13 +27,13 @@ public class Control : MonoBehaviour
 
     // used to update text for game based on click events through game progression
 
-     
-    public void UpdateText()
-    {
-        Text _textChange = Text.Find("StoryText");
-        _textChange = Text.print();
+
+    public void UpdateText() { }
+    //{
+    //    Text _textChange = Text.Find("StoryText");
+    //    _textChange = Text.print();
         
-    }
+    //}
 
     
 }
