@@ -15,6 +15,7 @@ public class StoryScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Each function is for a button.
         //For scene after mouse clicking on New game
         void PrintIntroduction()
         {
