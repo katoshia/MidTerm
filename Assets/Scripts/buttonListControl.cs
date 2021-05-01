@@ -20,21 +20,42 @@ public class buttonListControl : MonoBehaviour
 
     private void Start()
     {
-        //for(int i =1;i<=20;i++)
-        foreach (int i in intArray)
+        for(int i =0;i<=20;i++)
+        //foreach (int i in intArray)
         {
-            GameObject button = Instantiate(ButtonTemplate) as GameObject;
-            button.SetActive(true);
+            GameObject button;
+            //GameObject button = Instantiate(ButtonTemplate) as GameObject;
+            //button.SetActive(true);
+            if(i==1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
 
-            button.GetComponent<ButtonListButton>().SetText("button #" + i);
+                button.GetComponent<ButtonListButton>().SetText("The Lake");
+
+            }
+            else if(i==1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("The MainHall");
+            }
+            else
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText(" button #" + i);
+            }
+
+           // button.GetComponent<ButtonListButton>().SetText("button #" + i);
 
             button.transform.SetParent(ButtonTemplate.transform.parent, false);
         }
     }
-    public void UpdateGameScene()
-    {
-        if
-    }
+    //public void UpdateGameScene()
+    //{
+    //    if
+    //}
 
     public void ButtoClicked(string myTextString)
     {
