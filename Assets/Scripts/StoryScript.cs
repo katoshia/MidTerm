@@ -11,17 +11,7 @@ using System;
 
 public class StoryScript : MonoBehaviour
 {
-    public void PrintItOut()
-    {
-        print(" I don't KNOW!!");
-    }
-    private void Update()
-    {
-        void printInto()
-        {
-            print("lost dkdkd");
-        }
-    }
+    
     //Options for The Estate
     //Go Inside the estate, Main Entry Hall
     //Vist the gardens
