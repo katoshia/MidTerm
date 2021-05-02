@@ -67,6 +67,8 @@
     <Compile Include="Assets\Scripts\Control.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\DarkTheme.cs" />
+    <Compile Include="Assets\Scripts\LocationInfo.cs" />
+    <Compile Include="Assets\Scripts\StoryInfo.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

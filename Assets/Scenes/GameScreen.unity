@@ -402,8 +402,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 143533358}
   m_HandleRect: {fileID: 143533357}
   m_Direction: 2
-  m_Value: 0.99999994
-  m_Size: 0.42257914
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2448,6 +2448,7 @@ GameObject:
   - component: {fileID: 1857936423}
   - component: {fileID: 1857936422}
   - component: {fileID: 1857936424}
+  - component: {fileID: 1857936425}
   m_Layer: 5
   m_Name: StoryText
   m_TagString: Untagged
@@ -2471,7 +2472,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 295.315, y: 0}
   m_SizeDelta: {x: 590.63, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1857936422
@@ -2578,6 +2579,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &1857936425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857936420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a482bfec2d3f9cd43b09f07b38299918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1905646297
 GameObject:
   m_ObjectHideFlags: 0

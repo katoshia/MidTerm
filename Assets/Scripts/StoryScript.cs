@@ -11,7 +11,17 @@ using System;
 
 public class StoryScript : MonoBehaviour
 {
-
+    public void PrintItOut()
+    {
+        print(" I don't KNOW!!");
+    }
+    private void Update()
+    {
+        void printInto()
+        {
+            print("lost dkdkd");
+        }
+    }
     //Options for The Estate
     //Go Inside the estate, Main Entry Hall
     //Vist the gardens
@@ -19,6 +29,7 @@ public class StoryScript : MonoBehaviour
 
     public void PrintTheEstate()
     {
+        
         Console.WriteLine("Lord Shuran Dunkeld, your grandfather, is known for being a warrior, a leader and sometimes an adventurer in the service of the king. Recently, you and your family have moved into the Dunkeld estate due to rumors about your grandfather disappearing, and even being dead. While your parents handle the responsibilities of the estate, you have been left to explore as you wish.");
         Console.WriteLine("");
         Console.WriteLine("You currently stand at the bottum of the stairs leading up to the front doors of the estate. You can smell the sweet scent of flowers from the nearby gardens and can see the waters of a rather large lake in the near distance, on the other side of some fields.");

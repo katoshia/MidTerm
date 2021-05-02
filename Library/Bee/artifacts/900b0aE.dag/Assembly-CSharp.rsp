@@ -338,10 +338,12 @@
 "Assets/Scripts/Control.cs"
 "Assets/Scripts/DarkTheme.cs"
 "Assets/Scripts/GameTextManager.cs"
+"Assets/Scripts/LocationInfo.cs"
 "Assets/Scripts/MusicToggle.cs"
 "Assets/Scripts/MySceneManager.cs"
 "Assets/Scripts/SettingMenu.cs"
 "Assets/Scripts/SoundManager.cs"
+"Assets/Scripts/StoryInfo.cs"
 "Assets/Scripts/StoryScript.cs"
 -langversion:8.0
 
