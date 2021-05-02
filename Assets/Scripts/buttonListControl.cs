@@ -9,14 +9,15 @@ using UnityEngine.UI;
 
 public class buttonListControl : MonoBehaviour
 {
-    public Image img;
     public GameObject myButtonList;
-    public Transform buttonContainer;
     public string storyText;
     public List<GameObject> allButtons = new List<GameObject>();
 
     [SerializeField]
-    private GameObject ButtonTemplate;
+    public GameObject ButtonTemplate;
+
+    [SerializeField]
+    private GameObject TextTemplate;
 
     [SerializeField]
     private int[] intArray;
@@ -29,52 +30,99 @@ public class buttonListControl : MonoBehaviour
     // GameScene start for buttons shown. 1st runthough.
     private void Start()
     {
-        for (int i = 0; i <= 2; i++)
+        PrintIntro();
+        StartButtons();
+        //GameObject textStory;
+        
+        //GameObject textStory = Instantiate(TextTemplate) as GameObject ;
+        //textStory.SetActive(true);
+        //textStory.GetComponent<ButtonListButton>().SetText("let's try this out.");
+        //textStory.transform.SetParent(TextTemplate.transform.parent, false);
+
+        //for (int i = 0; i <= 2; i++)
+        //{
+            //GameObject textStory = Instantiate(TextTemplate) as GameObject;
+            //ChangeText(textStory);
+            //textStory = Instantiate(TextTemplate) as GameObject;
+            //textStory.SetActive(true);
+            //textStory.GetComponent<ButtonListButton>().SetText("let's try this out.");
+            //textStory.transform.SetParent(TextTemplate.transform.parent, false);
+
+            //GameObject button;
+            //GameObject textStory;
+            //if (i == 0)
+            //{
+            //   // DeleteDynamicText(textStory);
+            //    textStory = Instantiate(TextTemplate) as GameObject;
+            //    textStory.SetActive(true);
+            //    textStory.GetComponent<ButtonListButton>().SetText("let's try this out.");
+            //    textStory.transform.SetParent(TextTemplate.transform.parent, false);
+
+            //    button = Instantiate(ButtonTemplate) as GameObject;
+            //    button.SetActive(true);
+
+            //    button.GetComponent<ButtonListButton>().SetText("Lake");
+            //    button.transform.SetParent(ButtonTemplate.transform.parent, false);
+
+            //    string tempName = button.GetComponentInChildren<Text>().text;
+            //    button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+            //    allButtons.Add(button);
+
+            //}
+            //else if (i == 1)
+            //{
+            //    button = Instantiate(ButtonTemplate) as GameObject;
+            //    button.SetActive(true);
+            //    button.GetComponent<ButtonListButton>().SetText("Main Hall");
+            //    button.transform.SetParent(ButtonTemplate.transform.parent, false);
+            //    string tempName = button.GetComponentInChildren<Text>().text;
+            //    button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+            //    allButtons.Add(button);
+
+            //}
+            //else if (i == 2)
+            //{
+            //    button = Instantiate(ButtonTemplate) as GameObject;
+            //    button.SetActive(true);
+            //    button.GetComponent<ButtonListButton>().SetText("Gardens");
+            //    button.transform.SetParent(ButtonTemplate.transform.parent, false);
+            //    string tempName = button.GetComponentInChildren<Text>().text;
+            //    button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 5));
+            //    allButtons.Add(button);
+
+            //}
+        //}
+    }
+    public void DeleteDynamicText()
+    {
+        //GameObject textStory = GameObject.Find("StoryText(Clone)");
+        Destroy(GameObject.Find("StoryText(Clone)"));
+        //GameObject.Destroy(textStory);
+    }
+    public void DeleteDynamicText(GameObject textStory)
+    {
+        string tempName = textStory.GetComponent<Text>().name;
+        if(tempName == "StoryText(Clone)")
         {
-            GameObject button;
-            if (i == 0)
-            {
-                button = Instantiate(ButtonTemplate) as GameObject;
-                button.SetActive(true);
-
-                button.GetComponent<ButtonListButton>().SetText("Lake");
-                button.transform.SetParent(ButtonTemplate.transform.parent, false);
-
-                string tempName = button.GetComponentInChildren<Text>().text;
-                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
-                allButtons.Add(button);
-
-            }
-            else if (i == 1)
-            {
-                button = Instantiate(ButtonTemplate) as GameObject;
-                button.SetActive(true);
-                button.GetComponent<ButtonListButton>().SetText("Main Hall");
-                button.transform.SetParent(ButtonTemplate.transform.parent, false);
-                string tempName = button.GetComponentInChildren<Text>().text;
-                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
-                allButtons.Add(button);
-
-            }
-            else if (i == 2)
-            {
-                button = Instantiate(ButtonTemplate) as GameObject;
-                button.SetActive(true);
-                button.GetComponent<ButtonListButton>().SetText("Gardens");
-                button.transform.SetParent(ButtonTemplate.transform.parent, false);
-                string tempName = button.GetComponentInChildren<Text>().text;
-                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 5));
-                allButtons.Add(button);
-
-            }
+            Destroy(textStory);
         }
     }
+    public void ChangeText(string myText)
+    {
+        GameObject textStory;
 
+        textStory = Instantiate(TextTemplate) as GameObject;
+        DeleteDynamicText(textStory);
+        textStory.SetActive(true);
+        textStory.GetComponent<ButtonListButton>().SetText(myText);
+
+       // textStory.GetComponent<ButtonListButton>().SetText("Hello World,,,,dkdfhpaidhfaskdjfoipahpahfgahfafhio");
+        textStory.transform.SetParent(TextTemplate.transform.parent, false);
+    }
     public void OnButtonClick(string theName, int optionCount)
     {
-
-        //
         DeleteDynamicButtons();
+        
         if (theName == "Estate")
         {
             EstateButton(optionCount);
@@ -82,7 +130,6 @@ public class buttonListControl : MonoBehaviour
         else if (theName == "Lake")
         {
             LakeButton(optionCount);
-            //Debug.Log(theName);
         }
         else if(theName=="Back Woods"|| theName=="Forest")
         {
@@ -107,6 +154,11 @@ public class buttonListControl : MonoBehaviour
         else if (theName == "Main Entry")
         {
             MainEntryHall(optionCount);
+            PrintMainEntry();
+        }
+        else if(theName == "Go Outside")
+        {
+            PrintGoOutside();
         }
         else if (theName == "Explore Main Entry")
         {
@@ -114,7 +166,9 @@ public class buttonListControl : MonoBehaviour
         }
         else if (theName == "Main Hall")
         {
-            MainHallway(optionCount);
+            MainEntryHall(optionCount);
+            //MainHallway(optionCount);
+            PrintMainEntry();
         }
         else if (theName == "Trophy Room")
         {
@@ -305,19 +359,14 @@ public class buttonListControl : MonoBehaviour
             Destroy(button);
         }
         allButtons.Clear();
-
-    }
-    public void ButtoClicked(string myTextString)
-    {
-        Debug.Log(myTextString);
     }
     // lake - 3 - swim, estate, back woods
     private void LakeButton(int optionCount) 
     {
-        for (int i = 0; i <= optionCount; i++)
+        for (int i = 1; i <= optionCount; i++)
         {
             GameObject button;
-            if (i == 0)
+            if (i == 1)
             {
                 button = Instantiate(ButtonTemplate) as GameObject;
                 button.SetActive(true);
@@ -328,7 +377,7 @@ public class buttonListControl : MonoBehaviour
                 button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
                 allButtons.Add(button);
             }
-            else if (i == 1)
+            else if (i == 2)
             {
                 button = Instantiate(ButtonTemplate) as GameObject;
                 button.SetActive(true);
@@ -339,7 +388,7 @@ public class buttonListControl : MonoBehaviour
                 allButtons.Add(button);
 
             }
-            else if (i == 2)
+            else if (i == 3)
             {
                 button = Instantiate(ButtonTemplate) as GameObject;
                 button.SetActive(true);
@@ -534,9 +583,38 @@ public class buttonListControl : MonoBehaviour
         }
     }
     // gardens - 3 - lake, crypt, estate
-    private void Gardens(int optionCount) { }
+    private void Gardens(int optionCount) 
+    {
+
+    }
     // main Entry Hall - Upstairs/Main Hall, Library, Explore Main Entry
-    private void MainEntryHall(int optionCount) { }
+    private void MainEntryHall(int optionCount) 
+    {
+        for (int i = 0; i <= optionCount; i++)
+        {
+            GameObject button;
+            if (i == 0)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Go Outside");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+            else if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Leave Crypt");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+        }
+    }
     // Explore main entry - 2 - Upstairs/Main Hall, Library
     private void ExploreMainEntry(int optioinCount) { }
     // Upstairs/Main Hall - 4 - Second Floor, Sitting Room, Bathroom, Trophy Room
@@ -632,6 +710,69 @@ public class buttonListControl : MonoBehaviour
     // more storage 1 - return to secondary attic space
     private void Storage(int optionCount) { }
 
+    private void PrintIntro()
+    {
+        GameObject textStory;
+        textStory = Instantiate(TextTemplate) as GameObject;
+        textStory.SetActive(true);
+        textStory.GetComponent<ButtonListButton>().SetText("Lord Shuran Dunkeld, your grandfather, is known for being a warrior, a leader and sometimes an adventurer in the service of the king. Recently, you and your family have moved into the Dunkeld estate due to rumors about your grandfather disappearing, and even being dead. While your parents handle the responsibilities of the estate, you have been left to explore as you wish. You currently stand at the bottum of the stairs leading up to the front doors of the estate. You can smell the sweet scent of flowers from the nearby gardens and can see the waters of a rather large lake in the near distance, on the other side of some fields.");
+        textStory.transform.SetParent(TextTemplate.transform.parent, false);
+    }
 
+    private void PrintMainEntry()
+    {
+        DeleteDynamicText();
+        GameObject textStory = Instantiate(TextTemplate) as GameObject;
+        textStory.SetActive(true);
+        textStory.GetComponent<ButtonListButton>().SetText("You enter the main entry hall. Pillars, suits of armor and benches line the walls of this room.There is also a large chandelier that hangs from the ceiling and a decorative red and gold rug that covers most of the polished stone floor.There are stairs that lead up to a hallway and a door that goes to the library.");
+        textStory.transform.SetParent(TextTemplate.transform.parent, false);
+
+    }
+    private void PrintGoOutside()
+    {
+        DeleteDynamicText();
+
+        GameObject textStory = Instantiate(TextTemplate) as GameObject;
+        textStory.SetActive(true);
+        textStory.GetComponent<ButtonListButton>().SetText("You currently stand at the bottum of the stairs leading up to the front doors of the estate. You can smell the sweet scent of flowers from the nearby gardens and can see the waters of a rather large lake in the near distance, on the other side of some fields.");
+        textStory.transform.SetParent(TextTemplate.transform.parent, false);
+    }
+    private void StartButtons()
+    {
+        for (int i = 1; i <= 3; i++)
+        {
+            GameObject button;
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Lake");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Main Hall");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+            else if (i == 3)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Gardens");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+        }
+    }
 
 }

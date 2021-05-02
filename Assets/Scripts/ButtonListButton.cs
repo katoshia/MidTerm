@@ -9,6 +9,8 @@ public class ButtonListButton : MonoBehaviour
     private Text myText;
     [SerializeField]
     private buttonListControl buttonControl;
+    [SerializeField]
+    private buttonListControl textcontrol;
 
     private string myTextString;
     
@@ -17,8 +19,8 @@ public class ButtonListButton : MonoBehaviour
         myTextString = textString;
         myText.text = textString;
     }
-    public void OnClick() 
-    {
-        buttonControl.ButtoClicked(myTextString);
-    }
+    //public void OnClick() 
+    //{
+    //    buttonControl.ButtoClicked(myTextString);
+    //}
 }
