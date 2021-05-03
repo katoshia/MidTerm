@@ -42,7 +42,7 @@ public class StoryScript : MonoBehaviour
     //visit the gardnes
     //visit the crypt
 
-    void PrintBackWoods()
+    void PrintBackWoodsButton()
     {
         Console.WriteLine("The trail you are following is all dirt and rock. As you near the tree line, you see just how big and tall the trees are. Clearly, they are very old trees that have been there a long time. Despite the sunny weather, the forest seems dark and spooky.");
         Console.WriteLine("");
@@ -55,7 +55,7 @@ public class StoryScript : MonoBehaviour
     //Visit the gardens.
     //Go to the estate.
 
-    void PrintCrypt()
+    void PrintCryptButton()
     {
         Console.WriteLine("Your family is an old one, going back many generations. When a member of the family has passed on, their body is entered into the crypt with honor. The building is built of white and gray marble. Images of warrior guardians are carved into the stone doors.");
         Console.WriteLine("");
@@ -66,7 +66,7 @@ public class StoryScript : MonoBehaviour
     //Search the coffins
     //Leave the Crypt
 
-    void PrintInsideCrypt()
+    void PrintInsideCryptButton()
     {
         Console.WriteLine("As you open the doors, you hear the faint grind of stone on stone and then you step inside. Cool air blows out from the inside and swirls around you. As you enter the dimly lit chamber, you swear you hear a groan. There are stone coffins lining three of the walls and stairs going down into the catacombs.");
     }
@@ -75,7 +75,7 @@ public class StoryScript : MonoBehaviour
     //Close The Lid
     //Leave the crypt.
 
-    void PrintCoffins()
+    void PrintCoffinsButton()
     {
         Console.WriteLine("You search the main room and the stone coffins. The lids are very heavy and hard to move. You are only able to move one of them. With all your might, you push one to the side and peer in.");
         Console.WriteLine("");
@@ -87,7 +87,7 @@ public class StoryScript : MonoBehaviour
     //Go to the family crypt
     //Go to the estate
 
-    void PrintTheGardens()
+    void PrintTheGardensButton()
     {
         Console.WriteLine("The path you are walking on turns from dirt and grass to fine colored gravel. The sweet smell of flowers tickles your nose and you can hear the sound of an insect moving from flower to flower. As you follow the path through the gardens, you see stone benches where people can sit and you even come across a fountain. In your exploring, you also see Yori the gardner.");
     }
