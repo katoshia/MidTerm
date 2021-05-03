@@ -78,7 +78,7 @@ public class buttonListControl : MonoBehaviour
         {
             ExploreMainEntryButton(optionCount);
         }
-        else if (theName == "Main Hall" || theName == "Main Hallway" || theName == "Upstairs")
+        else if (theName == "Main Hall" || theName == "Main Hallway" || theName == "Upstairs" || theName == "Downstairs")
         {
             MainHallwayButton(optionCount);
             PrintMainEntry();
@@ -135,7 +135,7 @@ public class buttonListControl : MonoBehaviour
         {
             ExploreKitchenButton(optionCount);
         }
-        else if (theName == "Take brownie")
+        else if (theName == "Take a Brownie")
         {
             TakeBrownieButton(optionCount);
         }
@@ -151,7 +151,7 @@ public class buttonListControl : MonoBehaviour
         {
             PullLeverButton(optionCount);
         }
-        else if (theName == "Small hallway")
+        else if (theName == "Small Hallway")
         {
             SmallHallwayButton(optionCount);
         }
@@ -171,7 +171,7 @@ public class buttonListControl : MonoBehaviour
         {
             ExploreTreasureRoomButton(optionCount);
         }
-        else if (theName == "Second Floor")
+        else if (theName == "Second Floor" || theName == "Landing")
         {
             SecondFloorButton(optionCount);
         }
@@ -203,7 +203,7 @@ public class buttonListControl : MonoBehaviour
         {
             ReadBedroomBookButton(optionCount);
         }
-        else if (theName == "Large closet")
+        else if (theName == "Large Walk-In Closet")
         {
             MasterClosetButton(optionCount);
         }
@@ -219,7 +219,7 @@ public class buttonListControl : MonoBehaviour
         {
             ExploreGuestRoomButton(optionCount);
         }
-        else if (theName == "Small Closet")
+        else if (theName == "Small Walk-In Closet")
         {
             GuestClosetButton(optionCount);
         }
@@ -227,7 +227,7 @@ public class buttonListControl : MonoBehaviour
         {
             ExploreGuestClosetButton(optionCount);
         }
-        else if (theName == "Roayl Room")
+        else if (theName == "Royal Room")
         {
             RoyalRoomButton(optionCount);
         }
@@ -247,7 +247,7 @@ public class buttonListControl : MonoBehaviour
         {
             MirrorRoomButton(optionCount);
         }
-        else if (theName == "Attic ")
+        else if (theName == "Attic")
         {
             AtticRoomButton(optionCount);
         }
@@ -924,77 +924,1104 @@ public class buttonListControl : MonoBehaviour
         }
     }
     // dining room - 4 - sitting room, kitchen, pantry, Explore Dining Room
-    private void DiningRoomButton(int optionCount) { }
+    private void DiningRoomButton(int optionCount) 
+    {
+        for (int i = 1; i <= optionCount; i++)
+        {
+            GameObject button;
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Sitting Room");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Kitchen");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+            else if (i == 3)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Pantry");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+            else if (i == 4)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Explore Dining Room");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+        }
+    }
     // Explore Dining room - 3 - sitting room, kitchen, pantry
-    private void ExploreDiningRoomButton(int optionCount) { }
+    private void ExploreDiningRoomButton(int optionCount) 
+    {
+        for (int i = 1; i <= optionCount; i++)
+        {
+            GameObject button;
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Sitting Room");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Kitchen");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+            else if (i == 3)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Pantry");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+        }
+    }
     // kitchen - small hallway, dining room, explore kitchen
-    private void KitchenButton(int optionCount) { }
+    private void KitchenButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Small Hallway");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Dining Room");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 4));
+                allButtons.Add(button);
+            }
+            else if (i == 3)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Explore Kitchen");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+        }
+    }
     // explore kitchen - 3 - small hallway, dining room, take a brownie
-    private void ExploreKitchenButton(int optionCount) { }
+    private void ExploreKitchenButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Small Hallway");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Dining Room");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 4));
+                allButtons.Add(button);
+            }
+            else if (i == 3)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Take a Brownie");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+        }
+    }
     // take brownie - 2 - small hallway, dining room
-    private void TakeBrownieButton(int optionCount) { }
+    private void TakeBrownieButton(int optionCount)
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Small Hallway");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Dining Room");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 4));
+                allButtons.Add(button);
+            }
+        }
+    }
     // pantry - 2 - dining room, explore pantry
-    private void PantryButton(int optionCount) { }
+    private void PantryButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Explore Pantry");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Dining Room");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 4));
+                allButtons.Add(button);
+            }
+        }
+    }
     // explore pantry - dining room, pull lever
-    private void ExplorePantryButton(int optionCount) { }
-    // pubb lever - 2 - dining room, pool room
-    private void PullLeverButton(int optionCount) { }
+    private void ExplorePantryButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Pull Lever");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Dining Room");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 4));
+                allButtons.Add(button);
+            }
+        }
+    }
+    // pull lever - 2 - dining room, pool room
+    private void PullLeverButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Pool Room");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Dining Room");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 4));
+                allButtons.Add(button);
+            }
+        }
+    }
     // small hallway - 2 - servant's hall, kitchen
-    private void SmallHallwayButton(int optionCount) { }
+    private void SmallHallwayButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Servant's Hall");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Kitchen");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+        }
+    }
     // pool room - 2 - pantry, explore pool room
-    private void PoolRoomButton(int optionCount) { }
+    private void PoolRoomButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Pantry");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Explore Pool Room");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 1));
+                allButtons.Add(button);
+            }
+        }
+    }
     // explore pool room - 1 - pantry
-    private void ExplorePoolRoomButton(int optionCount) { }
+    private void ExplorePoolRoomButton(int optionCount)
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Pantry");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+        }
+    }
     // treasure room - 2 - climb ladder(guest room), explore treasure room
-    private void TreasureRoomButton(int optionCount) { }
+    private void TreasureRoomButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Climb Ladder");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+            if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Explore Treasure Room");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 1));
+                allButtons.Add(button);
+            }
+        }
+    }
     // explore treasure room - 1 -climb ladder(guest room)
-    private void ExploreTreasureRoomButton(int optionCount) { }
+    private void ExploreTreasureRoomButton(int optionCount)
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Climb Ladder");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+        }
+    }
     // 2nd floor - 4 - back downstairs, master bedroom, first hallway, 2nd hallway
-    private void SecondFloorButton(int optionCount) { }
+    private void SecondFloorButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Downstairs");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Master Bedroom");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+            else if(i == 3)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("First Hallway");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+            else if (i == 4)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Second Hallway");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+        }
+
+    }
     // 1st hallwall - 3 - guest room, 2nd floor hallway, 2nd hallway
-    private void FirstHallwayButton(int optionCount) { }
+    private void FirstHallwayButton(int optionCount)
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Guest Room");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Landing");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 4));
+                allButtons.Add(button);
+            }
+            else if (i == 3)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Second Hallway");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+        }
+    }
     // 2nd hallway - 3 - 1st hallway, upstairs(attic room), Explore hallway
-    private void SecondHallwayButton(int optionCount) { }
+    private void SecondHallwayButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Explore the Hallway");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Attic");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+            else if (i == 3)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("First Hallway");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+        }
+    }
     // Explore 2nd hallway - 3 - 1st hall, upstairs(attic room), push button
-    private void ExploreSecondHallwayButton(int optionCount) { }
+    private void ExploreSecondHallwayButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Push the Button");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Attic");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+            else if (i == 3)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("First Hallway");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+        }
+    }
     // push button - 3 - 1st hallway, upstairs(attic room), mirror room
-    private void PushBtnButton(int optionCount) { }
+    private void PushBtnButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Mirror Room");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 1));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Attic");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+            else if (i == 3)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("First Hallway");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+        }
+    }
     // master bedroom - 3 - 2nd floor hallway, walk-in closet, Explore master bedroom
-    private void MasterBedroomButton(int optionCount) { }
+    private void MasterBedroomButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Second Hallway");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Large Walk-In Closet");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 1));
+                allButtons.Add(button);
+            }
+            else if (i == 3)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Explore Master Bedroom");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+        }
+    }
     // explore master bedroom - 3 - 2nd floor hallway, walk-in closet, read a book
-    private void ExploreMasterBedroomButton(int optionCount) { }
+    private void ExploreMasterBedroomButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Second Hallway");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Large Walk-In Closet");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 1));
+                allButtons.Add(button);
+            }
+            else if (i == 3)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Read the Book");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+        }
+    }
     // read a book(master Bedroom) - 3 - walk-in closet, 2nd floor hallway, statue room
-    private void ReadBedroomBookButton(int optionCount) { }
+    private void ReadBedroomBookButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Landing");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 4));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Large Walk-In Closet");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 1));
+                allButtons.Add(button);
+            }
+            else if (i == 3)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Statue Room");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 1));
+                allButtons.Add(button);
+            }
+        }
+    }
     // walk-in closet - 1 - master bedroom
-    private void MasterClosetButton (int optionCount) { }
+    private void MasterClosetButton (int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Master Bedroom");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+        }
+    }
     // statue room - 1 - master bedroom
-    private void StatueRoomButton(int optionCount) { }
+    private void StatueRoomButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Master Bedroom");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+        }
+    }
     // guest room - 3 - 1st hallway, walk-in closet(guest room), explore guest room
-    private void GuestRoomButton(int optionCount) { }
+    private void GuestRoomButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("First Hallway");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Small Walk-In Closet");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+            else if (i == 3)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Explore Guest Room");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+        }
+    }
     // explore guest room - 3 - 1st hallway, walk-in closet(guest room), climb down ladder(treasure room)
-    private void ExploreGuestRoomButton(int optionCount) { }
+    private void ExploreGuestRoomButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("First Hallway");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Small Walk-In Closet");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+            else if (i == 3)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Climb Down Ladder");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+        }
+    }
     // guest walk-in closet - 2 - guest bedroom, explore walk-in closet(guest room)
-    private void GuestClosetButton(int optionCount) { }
+    private void GuestClosetButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Guest Bedroom");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Explore Small Walk-In Closet");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+        }
+    }
     // explore guest walk-in closet - 2 - guest bedroom, royal room
-    private void ExploreGuestClosetButton(int optionCount) { }
+    private void ExploreGuestClosetButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Guest Bedroom");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Royal Room");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 1));
+                allButtons.Add(button);
+            }
+        }
+    }
     // royal room - 1 -walk-in closet(guest room)
-    private void RoyalRoomButton(int optionCount) { }
+    private void RoyalRoomButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Small Walk-In Closet");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+        }
+    }
     // servant's hall (small hallway) - 3 - downstairs to small hallway, servant quarters, servants bathroom
-    private void ServantsHallButton(int optionCount) { }
+    private void ServantsHallButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Small Hallway");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Servant's Quarters");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 1));
+                allButtons.Add(button);
+            }
+            else if (i == 3)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Servant's Bathroom");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 1));
+                allButtons.Add(button);
+            }
+        }
+    }
     // servant quarters - 1 - return to servant's hall
-    private void ServantsQuartersButton(int optionCount) { }
+    private void ServantsQuartersButton(int optionCount)
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Servant's Hall");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+        }
+    }
     // servant's bathroom - 1 - return to servant's hall
-    private void ServantsBathroomButton(int optionCount) { }
+    private void ServantsBathroomButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Servant's Hall");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+        }
+    }
     // mirror room - 1 - 2nd hallway
-    private void MirrorRoomButton(int optionCount) { }
+    private void MirrorRoomButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Second Hallway");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+        }
+    }
     // attic room - 2 - 2nd hallway, secondary attic room
-    private void AtticRoomButton(int optionCount) { }
+    private void AtticRoomButton(int optionCount) 
+    {
+        GameObject button;
+        for (int i = 1; i <= optionCount; i++)
+        {
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Second Hallway");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Second Attic");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+        }
+    }
     // secondary attic room - 3 - attic space, more storage, explore secondary attic room
-    private void SecondAtticRoomButton(int optionCount) { }
+    private void SecondAtticRoomButton(int optionCount) 
+    {
+        for (int i = 1; i <= optionCount; i++)
+        {
+            GameObject button;
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Storage");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Attic");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }       
+            else if (i == 3)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Explore Second Attic Room");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+        }
+    }
     // explore secondary attic room - 2 - attic space, more storage
-    private void ExploreSecondAtticRoomButton(int optionCount) { }
+    private void ExploreSecondAtticRoomButton(int optionCount) 
+    {
+        for (int i = 1; i <= optionCount; i++)
+        {
+            GameObject button;
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Storage");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+            else if (i == 2)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Attic");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                allButtons.Add(button);
+            }
+        }
+    }
     // more storage 1 - return to secondary attic space
-    private void StorageButton(int optionCount) { }
+    private void StorageButton(int optionCount)
+    {
+        for (int i = 1; i <= optionCount; i++)
+        {
+            GameObject button;
+            if (i == 1)
+            {
+                button = Instantiate(ButtonTemplate) as GameObject;
+                button.SetActive(true);
+                button.GetComponent<ButtonListButton>().SetText("Second Attic Room");
+                button.transform.SetParent(ButtonTemplate.transform.parent, false);
+                string tempName = button.GetComponentInChildren<Text>().text;
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                allButtons.Add(button);
+            }
+        }
+    }
 
     // Start buttons for GameScene by Katoshia Grubb
     private void StartButtons()
