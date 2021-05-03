@@ -58,14 +58,11 @@
   <ItemGroup>
     <Compile Include="Assets\AudioItemSource.cs" />
     <Compile Include="Assets\Scripts\ButtonListButton.cs" />
-    <Compile Include="Assets\Scripts\GameTextManager.cs" />
     <Compile Include="Assets\Scripts\buttonListControl.cs" />
     <Compile Include="Assets\Scripts\MySceneManager.cs" />
-    <Compile Include="Assets\Scripts\LocationInfo.cs" />
     <Compile Include="Assets\Scripts\SettingMenu.cs" />
     <Compile Include="Assets\Scripts\StoryScript.cs" />
     <Compile Include="Assets\Scripts\MusicToggle.cs" />
-    <Compile Include="Assets\Scripts\StoryInfo.cs" />
     <Compile Include="Assets\Scripts\Control.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\DarkTheme.cs" />

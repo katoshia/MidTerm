@@ -8,6 +8,15 @@ using UnityEngine.UI;
 
 public class Control : MonoBehaviour
 {
+    [SerializeField] Toggle audioToggle;
+
+    private void Start()
+    {
+        if(AudioListener.volume == 0)
+        {
+            audioToggle.isOn = false;
+        }
+    }
     // used to load new scenes and save previsous screen for proper return from options menu.
     public void LoadScene(string newScene)
     {

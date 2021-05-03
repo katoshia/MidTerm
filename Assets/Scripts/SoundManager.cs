@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// no longer needed since it's one sound to worry about.
+
 public class SoundManager : MonoBehaviour
 {
 

@@ -19,8 +19,4 @@ public class ButtonListButton : MonoBehaviour
         myTextString = textString;
         myText.text = textString;
     }
-    //public void OnClick() 
-    //{
-    //    buttonControl.ButtoClicked(myTextString);
-    //}
 }
