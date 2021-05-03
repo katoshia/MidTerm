@@ -43,26 +43,32 @@ public class buttonListControl : MonoBehaviour
         else if (theName == "Lake")
         {
             LakeButton(optionCount);
+            PrintTheLake();
         }
         else if (theName == "Back Woods" || theName == "Forest") 
         {
             BackWoodsButton(optionCount);
+            PrintBackWoods();
         }
         else if(theName == "Crypt")
         {
             CryptButton(optionCount);
+            PrintCrypt();
         }
         else if (theName == "Inner Crypt")
         {
             InnerCryptButton(optionCount);
+            PrintInsideCrypt();
         }
         else if (theName == "Search Coffins")
         {
             SearchCoffinsButton(optionCount);
+            PrintCoffins();
         }
         else if (theName == "Gardens")
         {
             GardensButton(optionCount);
+            PrintTheGardens();
         }
         else if (theName == "Main Entry" || theName == "Go Inside" )
         {
@@ -77,191 +83,237 @@ public class buttonListControl : MonoBehaviour
         else if (theName == "Explore Main Entry")
         {
             ExploreMainEntryButton(optionCount);
+            PrintExploreEntry();
         }
         else if (theName == "Main Hall" || theName == "Main Hallway" || theName == "Upstairs" || theName == "Downstairs")
         {
             MainHallwayButton(optionCount);
             PrintMainEntry();
         }
-        else if (theName == "TrophyButton Room")
+        else if (theName == "Trophy Room")
         {
             TrophyButton(optionCount);
+            PrintTrophyRoom();
         }
         else if (theName == "Explore Trophy Room")
         {
             ExploreTrophyButton(optionCount);
+            PrintExploreTrophyRoom();
         }
         else if (theName == "Library")
         {
             LibraryButton(optionCount);
+            PrintLibrary();
         }
         else if (theName == "Explore Library")
         {
             ExploreLibraryButton(optionCount);
+            PrintExploreLibrary();
         }
-        else if (theName == "Read a book.")
+        else if (theName == "Read a Book")
         {
             ReadLibraryBookButton(optionCount);
+            PrintReadLibrary();
         }
         else if (theName == "Bathroom")
         {
             BathroomButton(optionCount);
+            PrintBathroom();
         }
-        else if (theName == "Secret Library Room")
+        else if (theName == "Hidden Room")
         {
             SecretLibraryRoomButton(optionCount);
+            PrintSecretLibraryRoom();
         }
-        else if (theName == "Explore Secret Room")
+        else if (theName == "Explore Hidden Room")
         {
             ExploreSecrectLibraryButton(optionCount);
+            PrintExploreSecretLibraryRoom();
         }
         else if (theName == "Sitting Room")
         {
             SittingRoomButton(optionCount);
+            PrintSittingRoom();
         }
         else if (theName == "Dining Room")
         {
             DiningRoomButton(optionCount);
+            PrintDiningRoom();
         }
         else if (theName == "Explore Dining Room")
         {
             ExploreDiningRoomButton(optionCount);
+            PrintExploreDiningRoom();
         }
         else if (theName == "Kitchen")
         {
             KitchenButton(optionCount);
+            PrintKitchen();
         }
         else if (theName == "Explore Kitchen")
         {
             ExploreKitchenButton(optionCount);
+            PrintExploreKitchen();
         }
         else if (theName == "Take a Brownie")
         {
             TakeBrownieButton(optionCount);
+            PrintTakeBrownie();
         }
         else if (theName == "Pantry")
         {
             PantryButton(optionCount);
+            PrintPantry();
         }
         else if (theName == "Explore Pantry")
         {
             ExplorePantryButton(optionCount);
+            PrintExplorePantry();
         }
         else if (theName == "Pull Lever")
         {
             PullLeverButton(optionCount);
+            PrintPullPantryLever();
         }
         else if (theName == "Small Hallway")
         {
             SmallHallwayButton(optionCount);
+            PrintSmallHallway();
         }
         else if (theName == "Pool Room")
         {
             PoolRoomButton(optionCount);
+            PrintPoolRoom();
         }
         else if (theName == "Explore Pool Room")
         {
             ExplorePoolRoomButton(optionCount);
+            PrintExplorePoolRoom();
         }
         else if (theName == "Treasure Room")
         {
             TreasureRoomButton(optionCount);
+            PrintTreasureRoom();
         }
         else if (theName == "Explore Treasure Room")
         {
             ExploreTreasureRoomButton(optionCount);
+            PrintExploreTreasureRoom();
         }
         else if (theName == "Second Floor" || theName == "Landing")
         {
             SecondFloorButton(optionCount);
+            PrintUpstairsHallway();
         }
         else if (theName == "First Hallway")
         {
             FirstHallwayButton(optionCount);
+            PrintFirstHallway();
         }
         else if (theName == "Second Hallway")
         {
             SecondHallwayButton(optionCount);
+            PrintSecondHallway();
         }
         else if (theName == "Explore the Hallway")
         {
             ExploreSecondHallwayButton(optionCount);
+            PrintExploreSecondHallway();
         }
         else if (theName == "Push the button")
         {
             PushBtnButton(optionCount);
+            PrintPushButton();
         }
         else if (theName == "Master Bedroom")
         {
             MasterBedroomButton(optionCount);
+            PrintMasterBedroom();
         }
         else if (theName == "Explore Master Bedroom")
         {
             ExploreMasterBedroomButton(optionCount);
+            PrintExploreMasterBedroom();
         }
         else if (theName == "Read the Book")
         {
             ReadBedroomBookButton(optionCount);
+            PrintReadMasterBedroom();
         }
         else if (theName == "Large Walk-In Closet")
         {
             MasterClosetButton(optionCount);
+            PrintWalkInCloset();
         }
         else if (theName == "Statue Room")
         {
             StatueRoomButton(optionCount);
+            PrintStatueRoom();
         }
         else if (theName == "Guest Room")
         {
             GuestRoomButton(optionCount);
+            PrintGuestRoom();
         }
         else if (theName == "Explore Guest Room")
         {
             ExploreGuestRoomButton(optionCount);
+            PrintExploreGuestRoom();
         }
         else if (theName == "Small Walk-In Closet")
         {
             GuestClosetButton(optionCount);
+            PrintGuestWalkInCloset();
         }
-        else if (theName == "Explore the closet.")
+        else if (theName == "Explore the closet")
         {
             ExploreGuestClosetButton(optionCount);
+            PrintExploreGuestWalkInCloset();
         }
         else if (theName == "Royal Room")
         {
             RoyalRoomButton(optionCount);
+            PrintRoyalRoom();
         }
         else if (theName == "Servant's Hall")
         {
             ServantsHallButton(optionCount);
+            PrintServantHall();
         }
         else if (theName == "Servant's Quarters")
         {
             ServantsQuartersButton(optionCount);
+            PrintServantQuarters();
         }
         else if (theName == "Servant's Bathroom")
         {
             ServantsBathroomButton(optionCount);
+            PrintServantBathrooms();
         }
         else if (theName == "Mirror Room")
         {
             MirrorRoomButton(optionCount);
+            PrintMirrorRoom();
         }
         else if (theName == "Attic")
         {
             AtticRoomButton(optionCount);
+            PrintAtticRoom();
         }
         else if (theName == "Second Attic Room")
         {
             SecondAtticRoomButton(optionCount);
+            PrintSecondaryAtticSpace();
         }
         else if (theName == "Explore Second Room")
         {
             ExploreSecondAtticRoomButton(optionCount);
+            PrintExploreSecondaryAttic();
         }
         else if (theName == "Storage")
         {
             StorageButton(optionCount);
+            PrintMoreStorage();
         }
     }
 
@@ -273,18 +325,18 @@ public class buttonListControl : MonoBehaviour
         for (int i = 1; i <= optionCount; i++)
         {
             GameObject button;
-            if (i == 1)
-            {
-                button = Instantiate(ButtonTemplate) as GameObject;
-                button.SetActive(true);
+            //if (i == 1)
+            //{
+            //    button = Instantiate(ButtonTemplate) as GameObject;
+            //    button.SetActive(true);
 
-                button.GetComponent<ButtonListButton>().SetText("Swim");
-                button.transform.SetParent(ButtonTemplate.transform.parent, false);
-                string tempName = button.GetComponentInChildren<Text>().text;
-                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
-                allButtons.Add(button);
-            }
-            else if (i == 2)
+            //    button.GetComponent<ButtonListButton>().SetText("Swim");
+            //    button.transform.SetParent(ButtonTemplate.transform.parent, false);
+            //    string tempName = button.GetComponentInChildren<Text>().text;
+            //    button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+            //    allButtons.Add(button);
+            //}
+             if (i == 1)
             {
                 button = Instantiate(ButtonTemplate) as GameObject;
                 button.SetActive(true);
@@ -295,7 +347,7 @@ public class buttonListControl : MonoBehaviour
                 allButtons.Add(button);
 
             }
-            else if (i == 3)
+            else if (i == 2)
             {
                 button = Instantiate(ButtonTemplate) as GameObject;
                 button.SetActive(true);
@@ -321,7 +373,7 @@ public class buttonListControl : MonoBehaviour
                 button.GetComponent<ButtonListButton>().SetText("Lake");
                 button.transform.SetParent(ButtonTemplate.transform.parent, false);
                 string tempName = button.GetComponentInChildren<Text>().text;
-                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
                 allButtons.Add(button);
             }
             else if (i == 2)
@@ -360,7 +412,7 @@ public class buttonListControl : MonoBehaviour
                 button.GetComponent<ButtonListButton>().SetText("Lake");
                 button.transform.SetParent(ButtonTemplate.transform.parent, false);
                 string tempName = button.GetComponentInChildren<Text>().text;
-                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
                 allButtons.Add(button);
             }
             else if (i == 2)
@@ -421,7 +473,7 @@ public class buttonListControl : MonoBehaviour
                 button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
                 allButtons.Add(button);
             }
-            else if(i==4)
+            else if (i == 4) 
             {
                 button = Instantiate(ButtonTemplate) as GameObject; 
                 button.SetActive(true);
@@ -446,14 +498,14 @@ public class buttonListControl : MonoBehaviour
                 button.GetComponent<ButtonListButton>().SetText("Search Coffins");
                 button.transform.SetParent(ButtonTemplate.transform.parent, false);
                 string tempName = button.GetComponentInChildren<Text>().text;
-                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 1));
                 allButtons.Add(button);
             }
             else if (i == 2)
             {
                 button = Instantiate(ButtonTemplate) as GameObject;
                 button.SetActive(true);
-                button.GetComponent<ButtonListButton>().SetText("Leave Crypt");
+                button.GetComponent<ButtonListButton>().SetText("Crypt");
                 button.transform.SetParent(ButtonTemplate.transform.parent, false);
                 string tempName = button.GetComponentInChildren<Text>().text;
                 button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 4));
@@ -467,21 +519,21 @@ public class buttonListControl : MonoBehaviour
         for (int i = 1; i <= optionCount; i++)
         {
             GameObject button;
+            //if (i == 1)
+            //{
+            //    button = Instantiate(ButtonTemplate) as GameObject;
+            //    button.SetActive(true);
+            //    button.GetComponent<ButtonListButton>().SetText("Close Lid");
+            //    button.transform.SetParent(ButtonTemplate.transform.parent, false);
+            //    string tempName = button.GetComponentInChildren<Text>().text;
+            //    button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+            //    allButtons.Add(button);
+            //}
             if (i == 1)
             {
                 button = Instantiate(ButtonTemplate) as GameObject;
                 button.SetActive(true);
-                button.GetComponent<ButtonListButton>().SetText("Close Lid");
-                button.transform.SetParent(ButtonTemplate.transform.parent, false);
-                string tempName = button.GetComponentInChildren<Text>().text;
-                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
-                allButtons.Add(button);
-            }
-            else if (i == 2)
-            {
-                button = Instantiate(ButtonTemplate) as GameObject;
-                button.SetActive(true);
-                button.GetComponent<ButtonListButton>().SetText("Leave Crypt");
+                button.GetComponent<ButtonListButton>().SetText("Crypt");
                 button.transform.SetParent(ButtonTemplate.transform.parent, false);
                 string tempName = button.GetComponentInChildren<Text>().text;
                 button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 4));
@@ -502,7 +554,7 @@ public class buttonListControl : MonoBehaviour
                 button.GetComponent<ButtonListButton>().SetText("Lake");
                 button.transform.SetParent(ButtonTemplate.transform.parent, false);
                 string tempName = button.GetComponentInChildren<Text>().text;
-                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
                 allButtons.Add(button);
             }
             else if (i == 2)
@@ -550,7 +602,7 @@ public class buttonListControl : MonoBehaviour
                 button.GetComponent<ButtonListButton>().SetText("Main Hallway");
                 button.transform.SetParent(ButtonTemplate.transform.parent, false);
                 string tempName = button.GetComponentInChildren<Text>().text;
-                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 4));
                 allButtons.Add(button);
             }
             else if (i == 3)
@@ -629,7 +681,7 @@ public class buttonListControl : MonoBehaviour
                 button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
                 allButtons.Add(button);
             }
-            if (i == 3)
+            else if (i == 3)
             {
                 button = Instantiate(ButtonTemplate) as GameObject;
                 button.SetActive(true);
@@ -677,7 +729,7 @@ public class buttonListControl : MonoBehaviour
                 button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
                 allButtons.Add(button);
             }
-            if (i == 3)
+            else if (i == 3)
             {
                 button = Instantiate(ButtonTemplate) as GameObject;
                 button.SetActive(true);
@@ -823,7 +875,7 @@ public class buttonListControl : MonoBehaviour
             {
                 button = Instantiate(ButtonTemplate) as GameObject;
                 button.SetActive(true);
-                button.GetComponent<ButtonListButton>().SetText("Secret Library Room");
+                button.GetComponent<ButtonListButton>().SetText("Hidden Room");
                 button.transform.SetParent(ButtonTemplate.transform.parent, false);
                 string tempName = button.GetComponentInChildren<Text>().text;
                 button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
@@ -859,7 +911,7 @@ public class buttonListControl : MonoBehaviour
             {
                 button = Instantiate(ButtonTemplate) as GameObject;
                 button.SetActive(true);
-                button.GetComponent<ButtonListButton>().SetText("Explore Secret Room");
+                button.GetComponent<ButtonListButton>().SetText("Explore Hidden Room");
                 button.transform.SetParent(ButtonTemplate.transform.parent, false);
                 string tempName = button.GetComponentInChildren<Text>().text;
                 button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 1));
@@ -2036,7 +2088,7 @@ public class buttonListControl : MonoBehaviour
                 button.GetComponent<ButtonListButton>().SetText("Lake");
                 button.transform.SetParent(ButtonTemplate.transform.parent, false);
                 string tempName = button.GetComponentInChildren<Text>().text;
-                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 3));
+                button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(tempName, 2));
                 allButtons.Add(button);
             }
             else if (i == 2)

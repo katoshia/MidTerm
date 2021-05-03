@@ -1028,8 +1028,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 47.475, y: -12.505}
-  m_SizeDelta: {x: 94.95, y: 25.01}
+  m_AnchoredPosition: {x: 83.67, y: -15.68}
+  m_SizeDelta: {x: 170, y: 31.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &632725913
 MonoBehaviour:
@@ -1974,8 +1974,6 @@ MonoBehaviour:
   allButtons: []
   ButtonTemplate: {fileID: 632725911}
   TextTemplate: {fileID: 1857936420}
-  intArray: 
-  inGameText: 
 --- !u!114 &1376278757
 MonoBehaviour:
   m_ObjectHideFlags: 0
